@@ -1,0 +1,11 @@
+name = "verified-modular-arithmetic"
+version = "0.1.0"
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "master"
+
+[[lean_lib]]
+name = "VerifiedModularArithmetic"
+
