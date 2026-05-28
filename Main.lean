@@ -7,3 +7,7 @@ def modAdd (a b n : Nat) : Nat := (a + b) % n
 theorem modAdd_comm (a b n : Nat) : modAdd a b n = modAdd b a n := by
   unfold modAdd
   rw [Nat.add_comm]
+
+theorem modAdd_zero (a n : Nat) : modAdd a 0 n = a % n := by
+  unfold modAdd
+  rw [Nat.add_zero]
