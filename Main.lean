@@ -59,3 +59,6 @@ theorem congruentMod_mul_same (a b n : Nat) : congruentMod a b n → congruentMo
   intro hab
   unfold congruentMod at hab ⊢
   simp [Nat.mul_mod, hab]
+
+theorem mod_add_mod (a b n : Nat) : (a + b) % n = ((a % n) + (b % n)) % n := by
+  rw [Nat.add_mod]
