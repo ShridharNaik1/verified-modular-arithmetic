@@ -38,3 +38,8 @@ theorem congruentMod_add (a b c d n : Nat) : congruentMod a c n → congruentMod
   unfold congruentMod at hac hbd ⊢
   unfold modAdd
   simp [Nat.add_mod, Nat.add_mod, hac, hbd]
+
+theorem congruentMod_mul (a b c d n : Nat) : congruentMod a c n → congruentMod b d n → congruentMod (a * b) (c * d) n := by
+  intro hac hbd
+  unfold congruentMod at hac hbd ⊢
+  simp [Nat.mul_mod, Nat.mul_mod, hac, hbd]
