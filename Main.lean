@@ -11,3 +11,7 @@ theorem modAdd_comm (a b n : Nat) : modAdd a b n = modAdd b a n := by
 theorem modAdd_zero (a n : Nat) : modAdd a 0 n = a % n := by
   unfold modAdd
   rw [Nat.add_zero]
+
+theorem modAdd_assoc (a b c n : Nat) : modAdd (modAdd a b n) c n = modAdd a (modAdd b c n) n := by
+  unfold modAdd
+  rw [Nat.mod_add_mod, Nat.add_mod_mod, Nat.add_assoc]
