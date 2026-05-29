@@ -15,3 +15,10 @@ theorem modAdd_zero (a n : Nat) : modAdd a 0 n = a % n := by
 theorem modAdd_assoc (a b c n : Nat) : modAdd (modAdd a b n) c n = modAdd a (modAdd b c n) n := by
   unfold modAdd
   rw [Nat.mod_add_mod, Nat.add_mod_mod, Nat.add_assoc]
+
+def congruentMod (a b n : Nat) : Prop := (a % n) = (b % n)
+#eval congruentMod (17 % 5) (2 % 5)
+
+theorem congruentMod_refl (a n : Nat) : congruentMod a a n := by
+  unfold congruentMod
+  rfl
