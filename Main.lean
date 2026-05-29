@@ -48,3 +48,9 @@ theorem congruentMod_of_eq_mod (a b n : Nat) : a % n = b % n → congruentMod a 
   intro h
   unfold congruentMod
   rw [h]
+
+theorem congruentMod_add_same (a b n : Nat) : congruentMod a b n → congruentMod (modAdd a a n) (modAdd b b n) n := by
+  intro hab
+  unfold congruentMod at hab ⊢
+  unfold modAdd
+  simp [Nat.add_mod, hab]
