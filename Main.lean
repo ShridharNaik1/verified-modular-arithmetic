@@ -32,3 +32,9 @@ theorem congruentMod_trans (a b c n : Nat) : congruentMod a b n → congruentMod
   intro hab hbc
   unfold congruentMod at hab hbc ⊢
   rw [hab, hbc]
+
+theorem congruentMod_add (a b c d n : Nat) : congruentMod a c n → congruentMod b d n → congruentMod (modAdd a b n) (modAdd c d n) n := by
+  intro hac hbd
+  unfold congruentMod at hac hbd ⊢
+  unfold modAdd
+  simp [Nat.add_mod, Nat.add_mod, hac, hbd]
