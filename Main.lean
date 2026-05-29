@@ -27,3 +27,8 @@ theorem congruentMod_symm (a b n : Nat) : congruentMod a b n → congruentMod b 
   intro h
   unfold congruentMod at h ⊢
   rw [h]
+
+theorem congruentMod_trans (a b c n : Nat) : congruentMod a b n → congruentMod b c n → congruentMod a c n := by
+  intro hab hbc
+  unfold congruentMod at hab hbc ⊢
+  rw [hab, hbc]
