@@ -22,3 +22,8 @@ def congruentMod (a b n : Nat) : Prop := (a % n) = (b % n)
 theorem congruentMod_refl (a n : Nat) : congruentMod a a n := by
   unfold congruentMod
   rfl
+
+theorem congruentMod_symm (a b n : Nat) : congruentMod a b n → congruentMod b a n := by
+  intro h
+  unfold congruentMod at h ⊢
+  rw [h]
