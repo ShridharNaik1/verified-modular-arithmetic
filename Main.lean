@@ -100,3 +100,6 @@ theorem mod_zero (a : Nat) : a % 0 = a := by
 
 theorem mod_self (a : Nat) : a % a = 0 := by
   rw [Nat.mod_self]
+
+theorem mod_add_left (a b n : Nat) : (a + b) % n = ((a % n) + b) % n := by
+  simp [Nat.add_mod]
