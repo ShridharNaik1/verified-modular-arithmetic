@@ -4,6 +4,8 @@ import Mathlib.Tactic
 def modAdd (a b n : Nat) : Nat := (a + b) % n
 #eval modAdd 7 9 5
 
+/-! Modular Addition -/
+
 theorem modAdd_comm (a b n : Nat) : modAdd a b n = modAdd b a n := by
   unfold modAdd
   rw [Nat.add_comm]
@@ -18,6 +20,8 @@ theorem modAdd_assoc (a b c n : Nat) : modAdd (modAdd a b n) c n = modAdd a (mod
 
 def congruentMod (a b n : Nat) : Prop := (a % n) = (b % n)
 
+/-! Congruence Relations-/
+
 theorem congruentMod_refl (a n : Nat) : congruentMod a a n := by
   unfold congruentMod
   rfl
@@ -31,6 +35,8 @@ theorem congruentMod_trans (a b c n : Nat) : congruentMod a b n → congruentMod
   intro hab hbc
   unfold congruentMod at hab hbc ⊢
   rw [hab, hbc]
+
+/-! Compatibility properties -/
 
 theorem congruentMod_add (a b c d n : Nat) : congruentMod a c n → congruentMod b d n → congruentMod (modAdd a b n) (modAdd c d n) n := by
   intro hac hbd
@@ -64,6 +70,8 @@ theorem mod_add_mod (a b n : Nat) : (a + b) % n = ((a % n) + (b % n)) % n := by
 
 theorem mod_mul_mod (a b n : Nat) : (a * b) % n = ((a % n) * (b % n)) % n := by
   rw [Nat.mul_mod]
+
+/-! Congruence properties -/
 
 theorem congruentMod_zero (a n : Nat) : congruentMod a 0 n → a % n = 0 := by
   intro h
@@ -118,3 +126,9 @@ theorem modPow_zero (a n : Nat) : modPow a 0 n = 1 % n := by
 theorem modPow_one (a n : Nat) : modPow a 1 n = a % n := by
   unfold modPow
   rw [Nat.pow_one]
+
+theorem congruentMod_pow (a b c n : Nat) : congruentMod a b n → congruentMod (modPow a c n) (modPow b c n) n := by
+  intro hab
+  unfold congruentMod at hab ⊢
+  unfold modPow
+  simp [Nat.pow_mod, hab]
