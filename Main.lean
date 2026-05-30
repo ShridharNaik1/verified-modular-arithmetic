@@ -114,3 +114,7 @@ def modPow (a b n : Nat) : Nat := (a ^ b) % n
 theorem modPow_zero (a n : Nat) : modPow a 0 n = 1 % n := by
   unfold modPow
   rw [Nat.pow_zero]
+
+theorem modPow_one (a n : Nat) : modPow a 1 n = a % n := by
+  unfold modPow
+  rw [Nat.pow_one]
