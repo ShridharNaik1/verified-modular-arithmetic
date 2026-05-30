@@ -195,14 +195,6 @@ gcd(a,1) = 1
 
 These properties are important in number theory and cryptographic applications involving coprimality.
 
----
-
-## Technologies Used
-
-- Lean 4
-- Mathlib
-- Git
-- GitHub Actions
 
 ---
 
