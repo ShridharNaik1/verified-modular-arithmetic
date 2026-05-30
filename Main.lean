@@ -80,3 +80,8 @@ theorem congruentMod_add_const (a b c n : Nat) : congruentMod a b n → congruen
   intro hab
   unfold congruentMod at hab ⊢
   simp [Nat.add_mod, Nat.add_mod, hab]
+
+theorem congruentMod_mul_const (a b c n : Nat) : congruentMod a b n → congruentMod (a * c) (b * c) n := by
+  intro hab
+  unfold congruentMod at hab ⊢
+  simp [Nat.mul_mod, Nat.mul_mod, hab]
