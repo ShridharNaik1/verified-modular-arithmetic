@@ -106,3 +106,11 @@ theorem mod_add_left (a b n : Nat) : (a + b) % n = ((a % n) + b) % n := by
 
 theorem mod_mul_left (a b n : Nat) : (a * b) % n = ((a % n) * b) % n := by
   simp [Nat.mul_mod]
+
+/-!Powers-/
+def modPow (a b n : Nat) : Nat := (a ^ b) % n
+#eval modPow 3 4 5
+
+theorem modPow_zero (a n : Nat) : modPow a 0 n = 1 % n := by
+  unfold modPow
+  rw [Nat.pow_zero]
