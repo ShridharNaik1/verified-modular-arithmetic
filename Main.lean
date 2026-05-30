@@ -97,3 +97,6 @@ theorem mod_mod (a n : Nat) : (a % n) % n = a % n := by
 
 theorem mod_zero (a : Nat) : a % 0 = a := by
   rw [Nat.mod_zero]
+
+theorem mod_self (a : Nat) : a % a = 0 := by
+  rw [Nat.mod_self]
