@@ -132,3 +132,7 @@ theorem congruentMod_pow (a b c n : Nat) : congruentMod a b n → congruentMod (
   unfold congruentMod at hab ⊢
   unfold modPow
   simp [Nat.pow_mod, hab]
+
+/-! GCD Properties -/
+theorem my_gcd_comm (a b : Nat) : Nat.gcd a b = Nat.gcd b a := by
+  exact Nat.gcd_comm a b
