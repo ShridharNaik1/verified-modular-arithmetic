@@ -70,3 +70,8 @@ theorem congruentMod_zero (a n : Nat) : congruentMod a 0 n → a % n = 0 := by
   unfold congruentMod at h
   rw [h]
   exact Nat.zero_mod n
+
+theorem congruentMod_suc (a b n : Nat) : congruentMod a b n → congruentMod (a + 1) (b + 1) n := by
+  intro hab
+  unfold congruentMod at hab ⊢
+  simp [Nat.add_mod, Nat.add_mod, hab]
