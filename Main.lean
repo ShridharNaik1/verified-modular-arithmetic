@@ -139,3 +139,6 @@ theorem my_gcd_comm (a b : Nat) : Nat.gcd a b = Nat.gcd b a := by
 
 theorem gcd_self (a : Nat) : Nat.gcd a a = a := by
   exact Nat.gcd_self a
+
+theorem gcd_one_comm (a : Nat) : Nat.gcd a 1 = 1 := by
+  simp [Nat.gcd_one_right]
