@@ -94,3 +94,6 @@ theorem congruentMod_square (a b n : Nat) : congruentMod a b n → congruentMod 
 /-! Modular Arithmetic properties -/
 theorem mod_mod (a n : Nat) : (a % n) % n = a % n := by
   rw [Nat.mod_mod]
+
+theorem mod_zero (a : Nat) : a % 0 = a := by
+  rw [Nat.mod_zero]
