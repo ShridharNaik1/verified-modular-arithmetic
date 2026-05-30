@@ -136,3 +136,6 @@ theorem congruentMod_pow (a b c n : Nat) : congruentMod a b n → congruentMod (
 /-! GCD Properties -/
 theorem my_gcd_comm (a b : Nat) : Nat.gcd a b = Nat.gcd b a := by
   exact Nat.gcd_comm a b
+
+theorem gcd_self (a : Nat) : Nat.gcd a a = a := by
+  exact Nat.gcd_self a
