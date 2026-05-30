@@ -230,8 +230,6 @@ Possible extensions include:
 - Coprimality proofs
 - Modular inverses
 - RSA-related formalizations
-- Fermat's Little Theorem
-- Euler's Theorem
 
 ---
 
