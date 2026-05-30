@@ -103,3 +103,6 @@ theorem mod_self (a : Nat) : a % a = 0 := by
 
 theorem mod_add_left (a b n : Nat) : (a + b) % n = ((a % n) + b) % n := by
   simp [Nat.add_mod]
+
+theorem mod_mul_left (a b n : Nat) : (a * b) % n = ((a % n) * b) % n := by
+  simp [Nat.mul_mod]
