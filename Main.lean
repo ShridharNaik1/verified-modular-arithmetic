@@ -90,3 +90,7 @@ theorem congruentMod_square (a b n : Nat) : congruentMod a b n → congruentMod 
   intro hab
   unfold congruentMod at hab ⊢
   simp [Nat.mul_mod, hab]
+
+/-! Modular Arithmetic properties -/
+theorem mod_mod (a n : Nat) : (a % n) % n = a % n := by
+  rw [Nat.mod_mod]
